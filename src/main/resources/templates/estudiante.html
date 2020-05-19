@@ -15,6 +15,7 @@
 			<table class="table">
 		  <thead class="thead-dark">
 		    <tr>
+	    		<th scope="col">id</th>
 		      <th scope="col">Nombre</th>
 		      <th scope="col">Apellido</th>
 		      <th scope="col">Carnet</th>
@@ -25,6 +26,7 @@
 		    <th:block th:each="estudiante, row:${estudiantes}">
 				<tr>
 				
+					<th th:text="${estudiante.c_usuario}"/>
 					<th th:text="${estudiante.Nombre}"/>
 					<th th:text="${estudiante.Apellido}"/>
 					<th th:text="${estudiante.Carne}"/>
@@ -34,6 +36,14 @@
 			</th:block>
 		  </tbody>
 		</table>
+		
+		<form  th:action="@{/eliminar}" method="post">
+				
+			<input type="number" name="codigo" placeholder="id del estudiante">
+			<input type="submit" value="Borrar">
+					
+		</form>
+		
 		</div>
 	</body>
 </html>

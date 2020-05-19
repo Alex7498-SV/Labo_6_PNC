@@ -38,6 +38,32 @@ public class EstudianteDAOImpl implements EstudianteDAO {
 	public void insertarEstudiante(Estudiante es) throws DataAccessException {
 		entityManager.persist(es);		
 	}
+
+	@Override
+	@Transactional
+	public void save(Estudiante es) throws DataAccessException {
+		// TODO Auto-generated method stub
+		try {
+			if(es.getC_usuario() == null) {
+				entityManager.persist(es);
+			}
+			else {
+				entityManager.merge(es);
+				entityManager.flush();
+			}
+		} catch(Throwable e) {
+			e.printStackTrace();
+		}
+	}
+
+	@Override
+	@Transactional
+	public void delete(Integer c_estudiante) throws DataAccessException {
+		// TODO Auto-generated method stub
+		Estudiante estudiante = entityManager.find(Estudiante.class, c_estudiante);
+		entityManager.remove(estudiante);
+		
+	}
 	
 	
 }
