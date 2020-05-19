@@ -21,9 +21,10 @@
 		</nav>
 		
 		<div class = "container-fluid" id="formulario">
+		<br>
 		
 			<h3>Ingrese los datos para un nuevo estudiante</h3>
-		
+			<br>		
 			<form th:action="@{/guardar}" th:object="${estudiante}" method="post">
 			  <div class="form-row">
 			    <div class="col">
@@ -35,6 +36,7 @@
 			      <span th:errors="*{Apellido}" style="color:#FF0000"></span>
 			    </div>
 			  </div>
+			  <br>
 			   <div class="form-row">
 			    <div class="col">
 			      <input type="text" class="form-control" placeholder="Carnet" th:field="*{Carne}">
@@ -45,9 +47,10 @@
 			      <span th:errors="*{Carrera}" style="color:#FF0000"></span>
 			    </div>
 			  </div>
+			  <br>
 		  	 <button type="submit" class="btn btn-info">Guardar</button>
 			</form>
-			
+			<br>
 			<form th:action="@{/listado}">
 				<button type="submit" class="btn btn-danger">Ver listado de estudiantes</button>
 			</form>

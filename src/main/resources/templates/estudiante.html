@@ -7,11 +7,12 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 			
-		<title>mostrar estudiante por llave primaria</title>	
+		<title>Estudiantes</title>	
 	</head>
 	<body>
 		
 		<div class="container-fluid">
+		<br>
 			<table class="table">
 		  <thead class="thead-dark">
 		    <tr>
@@ -36,13 +37,14 @@
 			</th:block>
 		  </tbody>
 		</table>
-		
+		<br>
 		<form  th:action="@{/eliminar}" method="post">
 				
 			<input type="number" name="codigo" placeholder="id del estudiante">
 			<input type="submit" value="Borrar">
 					
 		</form>
+		<br>
 		<a class="btn btn-primary" href="/inicio" role="button">Regresar</a>
 		</div>
 	</body>
